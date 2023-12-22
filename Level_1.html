@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1</title>
+    <div><label for=""id="Mlabel">Ez</label></div>
+</head>
+<body>
+    <style>
+        body{
+            background: linear-gradient(
+                
+                black,
+                aliceblue
+            );
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        label{
+            color: antiquewhite;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 40px;
+            text-align: center;
+        }
+        div label{
+            display: flex;
+            justify-content: center;
+        }
+        #BTN1{
+            box-shadow: 2px 3px 4px;
+            border-radius: 25px;
+            font-size: large;
+        }
+        #BTN1:hover{
+            box-shadow: 4px 5px 6px;
+            border-radius: 25px;
+        }
+        #submit{
+            box-shadow: 2px 3px 4px;
+            border-radius: 25px;
+            font-size: large;
+        }
+        #submit:hover{
+            box-shadow: 4px 5px 6px;
+            border-radius: 25px;
+        }
+        #submit:active{
+            background-color: bisque;
+        }
+        #Linkbutton{
+            box-shadow: 2px 3px 4px;
+            border-radius: 25px;
+            font-size: large;
+        }
+        #Linkbutton:hover{
+            box-shadow: 4px 5px 6px;
+            border-radius: 25px;
+        }
+        #Linkbutton:active{
+            background-color: bisque;
+        }
+    
+        div input{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        div #BTN1{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+
+<div><input type="text" id="input"></div>
+<br>
+<div><a href="index.html">
+    <button id="BTN1">Back</button>
+</a></div> 
+
+<div><button id="submit" onclick="passCheck()">Submit</button></div>
+
+<script>
+function passCheck() {
+        var inputValue = document.getElementById("input").value;
+        var messageLabel = document.getElementById("Mlabel");
+
+        if (inputValue === "Pa33w0rd") {
+            console.log("Correct");
+            messageLabel.innerHTML = "Correct";
+            createLinkButton();
+        } else {
+            console.log("Incorrect");
+            messageLabel.innerHTML = "Incorrect";
+        }
+    }
+
+    function createLinkButton() {
+        var linkButton = document.createElement("button");
+        linkButton.innerHTML = "Red";
+        linkButton.id = "Linkbutton"; 
+        linkButton.addEventListener("click", function() {
+            window.location.href = "Level_2.html";
+        });
+        document.body.appendChild(linkButton);
+    }
+  </script>
+</script>
+
+</body>
+</html>

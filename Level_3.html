@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 3</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: black;
+        }
+        label{
+            font-size: xx-large;
+            color: blue;
+        }
+        #submit{
+            border-radius: 45px;
+            background-color: black;
+            color: blue;
+            border-color: purple;
+        }
+
+        #CreatedBTN{ 
+            border-radius: 45px;
+            background-color: black;
+            color: blue;
+            border-color: purple;
+        }
+    </style>
+
+    <div>
+        <Label id="ML">Enter Color</Label><br>
+        <input type="text" id="Color_1"><br>
+        <input type="text" id="Color_2"><br>
+        <input type="text" id="Color_3"><br>
+        <button id="submit" onclick="Submit()">Submit</button>
+    </div>
+
+
+    <script>
+        function Submit(){
+            var Input_1 = document.getElementById("Color_1").value;
+            var Input_2 = document.getElementById("Color_2").value;
+            var Input_3 = document.getElementById("Color_3").value;
+            var ML = document.getElementById("ML");
+
+            if(Input_1 === "Grey" && Input_2 === "Green" && Input_3 === "Red"){
+                ML.innerHTML = "Correct"
+                NextLVL()
+            } else{
+                ML.innerHTML = "WRONG"
+            }
+        }
+
+        function NextLVL(){
+            var NextBTN = document.createElement("button");
+            NextBTN.innerHTML = "Next";
+            NextBTN.id = "CreatedBTN";
+            NextBTN.addEventListener("click", function() {
+            window.location.href = "No More lvl.html";
+        });
+        document.body.appendChild(NextBTN);
+        }
+
+
+
+
+    </script>
+</body>
+</html>
